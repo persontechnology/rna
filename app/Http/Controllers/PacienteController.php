@@ -72,18 +72,18 @@ class PacienteController extends Controller
     public function pulsos()
     {
         $pulso=Pulso::first();
-        $pulsos = array();
+        $labels = array();
         foreach ($pulso->data as $key => $value) {
-            array_push($pulsos,''.$key+1);
+            array_push($labels,''.$key+1);
         }
         return response()->json([
-            'labels'=>$pulsos,
+            'labels'=>$labels,
             'datasets'=>[
                 [
                     'data'=>$pulso->data
                 ]
             ],
-            'valor'=>$pulso->valor
+            'valor'=>$pulso->valor,'estado'=>$pulso->estado
         ]);
     }
 
