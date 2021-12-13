@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PacienteController;
 use App\Models\Pulso;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,9 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/api/pulsos', [PacienteController::class, 'pulsos']);
+Route::get('/api/pulsos-v', [PacienteController::class, 'pulsos_v']);
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
