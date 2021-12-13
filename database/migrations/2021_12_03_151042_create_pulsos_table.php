@@ -17,8 +17,8 @@ class CreatePulsosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->json('data');
-            $table->string('valor');
-            $table->string('estado');
+            $table->string('valor')->nullable()->default('');
+            $table->string('estado')->nullable()->default('');
         });
     }
 

@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             $pulso=new Pulso();
             $pulso->data='[38,50,60,40,12,16]';
             $pulso->valor=0;
+            $pulso->estado='';
             $pulso->save();
         }
     }
