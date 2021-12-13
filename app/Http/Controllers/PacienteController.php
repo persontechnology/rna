@@ -92,7 +92,7 @@ class PacienteController extends Controller
             Historial::create([
                 'pulso_cardiaco'=>$request->pulso,
                 'paciente_id'=>$request->id,
-                'estado'=>'A'
+                'estado'=>$request->estado_pulso
             ]);
             return response()->json('ok');
         } catch (\Throwable $th) {

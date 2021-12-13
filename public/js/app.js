@@ -4648,13 +4648,21 @@ var LineChart = function LineChart() {
       enabled: false
     },
     xAxis: {
-      visible: false,
+      categories: [''],
       title: {
-        text: ''
+        text: null
+      },
+      labels: {
+        enabled: false,
+        //default is true
+        y: 20,
+        rotation: -45,
+        align: 'right'
       }
     },
     series: [{
-      data: []
+      data: [],
+      name: 'Pulso cardiaco'
     }],
     yAxis: {
       title: {
@@ -4663,6 +4671,9 @@ var LineChart = function LineChart() {
     },
     plotOptions: {
       series: {
+        label: {
+          connectorAllowed: false
+        },
         marker: {
           enabled: false
         },
