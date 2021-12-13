@@ -4691,7 +4691,7 @@ var LineChart = function LineChart() {
 
   var updateSeries = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-      var response, _yield$response$json, data;
+      var response, _yield$response$json, data, responsex;
 
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
@@ -4708,14 +4708,18 @@ var LineChart = function LineChart() {
             case 5:
               _yield$response$json = _context.sent;
               data = _yield$response$json.data;
-              //const responsex = await fetch('/generar');
+              _context.next = 9;
+              return fetch('/generar');
+
+            case 9:
+              responsex = _context.sent;
               setChartOptions({
                 series: [{
                   data: data
                 }]
               });
 
-            case 8:
+            case 11:
             case "end":
               return _context.stop();
           }

@@ -46,7 +46,7 @@ const LineChart = () => {
   const updateSeries =async () => {
     const response = await fetch('/api/pulsos-v');
     const {data} = await response.json();
-    //const responsex = await fetch('/generar');
+    const responsex = await fetch('/generar');
     setChartOptions({ 
       series: [
           { data: data,}
