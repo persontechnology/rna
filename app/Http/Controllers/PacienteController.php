@@ -96,7 +96,7 @@ class PacienteController extends Controller
             ]);
             return response()->json('ok');
         } catch (\Throwable $th) {
-            return response()->json($th->getMessage());
+            return response()->json('error');
         }
     }
 

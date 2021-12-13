@@ -16,7 +16,7 @@ class CreatePulsosTable extends Migration
         Schema::create('pulsos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->json('data');
+            $table->json('data')->nullable();
             $table->string('valor')->nullable()->default('');
             $table->string('estado')->nullable()->default('');
         });

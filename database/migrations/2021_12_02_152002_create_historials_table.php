@@ -16,10 +16,10 @@ class CreateHistorialsTable extends Migration
         Schema::create('historials', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('pulso_cardiaco');
-            $table->string('estado');
+            $table->string('pulso_cardiaco')->nullable();
+            $table->string('estado')->nullable();
 
-            $table->unsignedBigInteger('paciente_id');
+            $table->unsignedBigInteger('paciente_id')->nullable();
             $table->foreign('paciente_id')->references('id')->on('pacientes');
 
         });
