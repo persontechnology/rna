@@ -110,7 +110,7 @@ class PacienteController extends Controller
     public function vaciarHistorial(Request $request)
     {
         try {
-            $h=Historial::where('paciente_id',$request->id);
+            $h=Historial::where('paciente_id',$request->id)->get();
             foreach ($h as $hi) {
                 $hi->delete();
             }
