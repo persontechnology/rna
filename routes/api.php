@@ -9,6 +9,7 @@ Route::post('/eliminar-paciente', [PacienteController::class, 'eliminar']);
 Route::get('/pacientes/{cedula?}', [PacienteController::class, 'index']);
 
 Route::post('/historial-guardar', [PacienteController::class, 'guaradarHistorial']);
+Route::post('/vaciar-historial', [PacienteController::class, 'vaciarHistorial']);
 Route::get('/listado-historials/{paciente?}', [PacienteController::class, 'listadoHistorial']);
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {

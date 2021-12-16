@@ -106,4 +106,17 @@ class PacienteController extends Controller
         return response()->json($pac->historiales);
         
     }
+
+    public function vaciarHistorial(Request $request)
+    {
+        try {
+            $h=Historial::where('paciente_id',$request->id);
+            foreach ($h as $hi) {
+                $hi->delete();
+            }
+            return response()->json('ok');
+        } catch (\Throwable $th) {
+            return response()->json('error');
+        }
+    }
 }
