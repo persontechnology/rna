@@ -42,6 +42,7 @@ class PacienteController extends Controller
                 'apellidos' => 'required|max:100',
                 'nombres'   => 'required|max:100',
                 'cedula'    => 'required|unique:pacientes,cedula,'.$id,
+                'edad'      => 'required'
             ]);
             $p=Paciente::find($id);
             $msg='editar';
@@ -51,6 +52,7 @@ class PacienteController extends Controller
                 'apellidos' => 'required|max:100',
                 'nombres'   => 'required|max:100',
                 'cedula'    => 'required|unique:pacientes|max:10',
+                'edad'      => 'required'
             ]);
             $p=new Paciente();
         }
@@ -62,6 +64,7 @@ class PacienteController extends Controller
             $p->apellidos=$request->apellidos;
             $p->nombres=$request->nombres;
             $p->cedula=$request->cedula;
+            $p->edad=$request->edad;
             $p->save();
             return response()->json(['msg'=>$msg]);
         } catch (\Throwable $th) {

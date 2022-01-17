@@ -19,6 +19,7 @@ class CreatePacientesTable extends Migration
             $table->string('apellidos');
             $table->string('nombres');
             $table->string('cedula');
+            $table->integer('edad');
         });
     }
 

@@ -12,6 +12,7 @@ class Paciente extends Model
         'apellidos',
         'nombres',
         'cedula',
+        'edad'
     ];
 
     public function historiales()
